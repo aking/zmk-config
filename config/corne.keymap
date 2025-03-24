@@ -35,21 +35,21 @@
         keymap {
                 compatible = "zmk,keymap";
 
-                QUERTY {
+                querty {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
 // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+//      | LSHIFT/- | NUM/BSPC| LGUI/ENT |   | SYM/TAB | NAV/SPC  | RALT |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P         &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &mt CTRL ESC  &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp COLON &kp ESC
-    &mt LSHFT MINUS  &lt NUM BSPC &mt LGUI RET  &lt SYM TAB &lt NAV SPC &kp RALT
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U  &kp I     &kp O   &kp P         &kp BSPC
+   &kp LCTRL &kp A &kp S &kp D &kp F &kp G    &kp H &kp J  &kp K     &kp L   &mt CTRL ESC  &kp SQT
+   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M  &kp COMMA &kp DOT &kp COLON &kp ESC
+   &mt LSHFT MINUS &lt NUM BSPC &mt LGUI RET  &lt SYM TAB &lt NAV SPC &kp RALT
                         >;
                 };
 
-                NUM {
+                numbers {
 // -----------------------------------------------------------------------------------------
 // |  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |  |
 // |  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |  |
@@ -63,7 +63,7 @@
                         >;
                 };
 
-                NAV {
+                navigation {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -77,7 +77,7 @@
                         >;
                 };
 
-                SYM {
+                symbols {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -91,7 +91,7 @@
                         >;
                 };
 
-                BLUETOOTH {
+                bluetooth {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
 // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
