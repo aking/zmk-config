@@ -13,7 +13,7 @@
 #define NUM 1
 #define NAV 2
 #define FUN 3
-#define BLUETOOTH 4
+#define BT 4
 
 // Behavior configuration
 &mt {
@@ -41,26 +41,26 @@
 // |  |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U   |  I  |  O  |  P     |  |
 // |  |  A  |  S  |  D  |  F  |  G  |     |  H  |  J   |  K  |  L  |LCTL/ESC|  |
 // |  |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M   |  :  |  .  |RSHFT// |  |
-//  | LSHIFT/- | NUM/BSPC| LGUI/ENT |     | FUN/TAB | NAV/SPC  | RALT |
+//  | LSHIFT/- | NUM/BSPC| LGUI/ENT |     | FUN/TAB | NAV/SPC | BT/RALT |
                         bindings = <
    &trans &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U  &kp I     &kp O   &kp P          &trans
    &trans &kp A &kp S &kp D &kp F &kp G    &kp H &kp J  &kp K     &kp L   &mt LCTRL ESC  &trans
-   &trans &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M  &kp COMMA &kp DOT &mt RSHFT FSLH &trans
-     &mt LSHFT MINUS &lt NUM BSPC &mt LGUI RET  &lt FUN TAB  &lt NAV SPACE &kp RALT
+   &trans &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M  &kp COLON &kp DOT &mt RSHFT FSLH &trans
+     &mt LSHFT MINUS &lt NUM BSPC &mt LGUI RET  &lt FUN TAB  &lt NAV SPACE &lt BT RALT
                         >;
                 };
 
                 numbers {
                   display-name = "Numbers";
 // -----------------------------------------------------------------------------------------
-// |  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |  |
-// |  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |  |
-// |  |  [  |  ]  |  ;  |  `  |  ~  |   |  :  | "|" |  :  |  .  |  +  |  |
-//                     | LSHIFT | | |   | TAB | SPC | , |
+// | |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |    )    | |
+// | |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |    0    | |
+// | |  [  |  ]  |  ;  |  `  |  ~  |   |  \  | "|" |  ;  |  .  |RSHFT/+  | |
+//                    | LSHIFT | | |   | TAB | SPC | , |
                         bindings = <
-   &trans &kp EXCL &kp AT   &kp HASH  &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &trans
-   &trans &kp N1   &kp N2   &kp N3    &kp N4   &kp N5      &kp N6    &kp N7    &kp N8    &kp N9   &kp N0   &trans
-   &trans &kp LBKT &kp RBKT &kp SEMI  &kp SQT  &kp TILDE   &kp SEMI  &kp PIPE  &kp COLON &kp DOT  &kp PLUS &trans
+   &trans &kp EXCL &kp AT   &kp HASH  &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR       &trans
+   &trans &kp N1   &kp N2   &kp N3    &kp N4   &kp N5      &kp N6    &kp N7    &kp N8    &kp N9   &kp N0         &trans
+   &trans &kp LBKT &kp RBKT &kp SEMI  &kp SQT  &kp TILDE   &kp BSLH  &kp PIPE  &kp COLON &kp DOT  &mt RSHFT PLUS &trans
                             &kp LSHFT &trans   &trans      &kp TAB   &kp SPACE &kp COMMA
                         >;
                 };
@@ -68,10 +68,10 @@
                 navigation {
                   display-name = "Nav";
 // -----------------------------------------------------------------------------------------
-// | |  [  |  ]  |  #  |  $  |  %  |   |  [   |   ]  |  =   |  {  |  } | |
-// | |  ;  |  "  |     |     |     |   |  <-  |  DN  | UP   |  -> |  \ | |
-// | |     |     |     |     |     |   | HOME | PGDN | PGUP | END |  ; | |
-//                    | GUI |     | SPC |   | ENT |      | ALT |
+// | |  [  |  ]  |  #  | $ | % |   |  [   |   ]  |  =   |  {  |  } | |
+// | |  ;  |  "  |     |   |   |   |  <-  |  DN  | UP   |  -> |  \ | |
+// | |     |     |     |   |   |   | HOME | PGDN | PGUP | END |  ; | |
+//               | GUI |   |SPC|   | ENT  |      | ALT |
                         bindings = <
    &trans &kp LBKT &kp RBKT &kp HASH &kp DLLR &kp PRCNT   &kp LBKT  &kp RBKT  &kp EQUAL &kp LBRC  &kp RBRC      &trans
    &trans &kp SEMI &kp DQT  &trans   &trans   &trans      &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &mt RCTRL ESC &trans
@@ -81,12 +81,12 @@
                 };
 
                 functions {
-                  display-name = "4";
+                  display-name = "Fn Keys";
 // -----------------------------------------------------------------------------------------
-// | | !  | @  | #  |  $  |  %  |   |  ^ | &  | *  | (  |  )  | |
-// | | F1 | F2 | F3 | F4  | F5  |   | F6 | F7 | F8 | F9 | F10 | |
-// | |    |    |    |     |     |   |  _ | +  | {  | }  | "|" | |
-//       | GUI |  CTRL | LSHIFT |   |    |    |    |
+// | | !  | @  | #  |  $  |  % |   |  ^ | &  | *  | (  |  )  | |
+// | | F1 | F2 | F3 | F4  | F5 |   | F6 | F7 | F8 | F9 | F10 | |
+// | |    |    |    |     |    |   |  _ | +  | {  | }  | "|" | |
+//        | GUI|CTRL|LSHFT|    |   |    |    |
                         bindings = <
    &trans &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &trans
    &trans &kp F1   &kp F2 &kp F3   &kp F4   &kp F5      &kp F6 &kp F7 &kp F8  &kp F9 &kp F10 &trans
@@ -98,15 +98,15 @@
                 bluetooth {
                   display-name = "BT";
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// | |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0    | |
+// | | BT0 | BT1 | BT2 | BT3 | BT4 |   | LFT | DWN |  UP | RGT | BTCLR | |
+// | |     |     |     |     |     |   |     |     |     |     |       | |
+//               |     |     |     |   |     |     |     |
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+   &trans &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0     &trans
+   &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &bt BT_CLR &trans
+   &trans &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans     &trans
+                                                      &trans &trans &trans   &trans &trans &trans
                         >;
                 };
 
