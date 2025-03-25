@@ -12,7 +12,7 @@
 #define QUERTY 0
 #define NUM 1
 #define NAV 2
-#define SYM 3
+#define FUN 3
 #define BLUETOOTH 4
 
 // Behavior configuration
@@ -37,15 +37,15 @@
 
                 querty {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//      | LSHIFT/- | NUM/BSPC| LGUI/ENT |   | SYM/TAB | NAV/SPC  | RALT |
+// |  |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U   |  I  |  O  |  P     |  |
+// |  |  A  |  S  |  D  |  F  |  G  |     |  H  |  J   |  K  |  L  |LCTL/ESC|  |
+// |  |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M   |  :  |  .  |RSHFT// |  |
+//  | LSHIFT/- | NUM/BSPC| LGUI/ENT |     | FUN/TAB | NAV/SPC  | RALT |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U  &kp I     &kp O   &kp P         &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G    &kp H &kp J  &kp K     &kp L   &mt LCTRL ESC  &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M  &kp COMMA &kp DOT &kp SEMI     &kp ESC
-   &mt LSHFT MINUS &lt NUM BSPC &mt LGUI RET  &lt SYM TAB &lt NAV SPC &kp RALT
+   &trans &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U  &kp I     &kp O   &kp P          &trans
+   &trans &kp A &kp S &kp D &kp F &kp G    &kp H &kp J  &kp K     &kp L   &mt LCTRL ESC  &trans
+   &trans &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M  &kp COMMA &kp DOT &mt RSHFT FSLH &trans
+     &mt LSHFT MINUS &lt NUM BSPC &mt LGUI RET  &lt FUN TAB  &lt NAV SPACE &kp RALT
                         >;
                 };
 
@@ -53,41 +53,41 @@
 // -----------------------------------------------------------------------------------------
 // |  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |  |
 // |  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |  |
-// |  |     |     |     |     |     |   |  :  | "|" |  :  |  .  |  +  |  |
-//                    | GUI |     | SPC |   | TAB | SPC |     |
+// |  |  [  |  ]  |  ;  |  `  |  ~  |   |  :  | "|" |  :  |  .  |  +  |  |
+//                     | LSHIFT | | |   | TAB | SPC | , |
                         bindings = <
-   &trans &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &trans
-   &trans &kp N1   &kp N2 &kp N3   &kp N4   &kp N5      &kp N6    &kp N7   &kp N8    &kp N9   &kp N0   &trans
-   &trans &trans   &trans &trans   &trans   &trans      &kp SEMI  &kp PIPE &kp COLON &kp DOT  &kp PLUS &trans
-                           &kp LSHFT &trans &trans      &kp TAB   &kp SPC  &trans
+   &trans &kp EXCL &kp AT   &kp HASH  &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &trans
+   &trans &kp N1   &kp N2   &kp N3    &kp N4   &kp N5      &kp N6    &kp N7    &kp N8    &kp N9   &kp N0   &trans
+   &trans &kp LBKT &kp RBKT &kp SEMI  &kp SQT  &kp TILDE   &kp SEMI  &kp PIPE  &kp COLON &kp DOT  &kp PLUS &trans
+                            &kp LSHFT &trans   &trans      &kp TAB   &kp SPACE &kp COMMA
                         >;
                 };
 
                 navigation {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-// | CTRL |  :  |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// | |  [  |  ]  |  #  |  $  |  %  |   |  [   |   ]  |  =   |  {  |  } | |
+// | |  ;  |  "  |     |     |     |   |  <-  |  DN  | UP   |  -> |  \ | |
+// | |     |     |     |     |     |   | HOME | PGDN | PGUP | END |  ; | |
+//                    | GUI |     | SPC |   | ENT |      | ALT |
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &kp DQT  &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &trans &kp LBKT &kp RBKT &kp HASH &kp DLLR &kp PRCNT   &kp LBKT  &kp RBKT  &kp EQUAL &kp LBRC  &kp RBRC      &trans
+   &trans &kp SEMI &kp DQT  &trans   &trans   &trans      &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &mt RCTRL ESC &trans
+   &trans &trans   &trans   &trans   &trans   &trans      &kp HOME  &kp PGDN  &kp PGUP  &kp END   &kp SEMI      &trans
+                            &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
                         >;
                 };
 
-                symbols {
+                functions {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// | | !  | @  | #  |  $  |  %  |   |  ^ | &  | *  | (  |  )  | |
+// | | F1 | F2 | F3 | F4  | F5  |   | F6 | F7 | F8 | F9 | F10 | |
+// | |    |    |    |     |     |   |  _ | +  | {  | }  | "|" | |
+//       | GUI |  CTRL | LSHIFT |   |    |    |    |
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &trans &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &trans
+   &trans &kp F1   &kp F2 &kp F3   &kp F4   &kp F5      &kp F6 &kp F7 &kp F8  &kp F9 &kp F10 &trans
+   &trans &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &trans
+                        &kp LGUI &kp LCTRL  &kp LSHFT   &trans &trans &trans
                         >;
                 };
 
